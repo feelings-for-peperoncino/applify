@@ -24,7 +24,7 @@ main {
 
 main {
 
-  max-width: 600px;
+  max-width: 500px;
   margin: 0 auto;
   background-image: url('../img/bg.png');
   background-size: cover; /* 画像を要素全体にフィットさせる */
