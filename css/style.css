@@ -49,6 +49,11 @@ main {
   padding: 20px 0;
 }
 
+.level-btn {
+  width: 100%;
+  max-width: 200px;
+}
+
 .question-view {
   display: flex;
   flex-direction: column;
@@ -56,13 +61,13 @@ main {
 }
 
 .question-view-header {
-  padding: 20px 0;
+  padding: 10px 0;
   background-color: yellow;
 }
 
 .question-view-header-level {
   color: red;
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 .question-view-content {
