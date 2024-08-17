@@ -1,0 +1,102 @@
+body {
+  background-color: #333;
+}
+
+p {
+  padding: 0;
+  margin: 0;
+}
+
+html, body, .top-view, .question-view {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+} 
+main {
+  height: 100%;
+  flex: 1;
+
+}
+
+main {
+  width: 500px;
+  max-width: 500px;
+  margin: 0 auto;
+  background-image: url('../img/bg.png');
+  background-size: cover; /* 画像を要素全体にフィットさせる */
+  background-position: center; /* 画像を中央に配置する */
+  background-repeat: no-repeat; /* 画像を繰り返さない */
+}
+
+.top-view {
+  display: flex;
+  flex-direction: column;
+} 
+
+.top-view-header {
+  padding: 20px 0;
+}
+
+.top-view-content {
+  flex: 1;
+}
+
+.top-view-footer {
+  padding: 20px 0;
+}
+
+.question-view {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+}
+
+.question-view-header {
+  padding: 20px 0;
+  background-color: yellow;
+}
+
+.question-view-header-level {
+  color: red;
+  font-size: 2rem;
+}
+
+.question-view-content {
+  flex: 1;
+}
+
+.question-view-footer {
+  padding: 20px 0;
+  background-color: blue;
+}
+
+.question {
+  height: 400px;
+}
+
+/* .scale-img {
+  width: 300px;
+  height: auto;
+} */
+
+.yellow-apple {
+  width: 80px;
+}
+
+.equal {
+  font-size: 2rem;
+}
+
+.waku {
+  /* apuaの外側を四角で囲む */
+  /* テキストが入っていない場合も高さを確保 */
+  line-height: 2;
+  height: 80px;
+  border: 5px solid blue;
+
+}
+
