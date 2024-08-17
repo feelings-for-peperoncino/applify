@@ -7,12 +7,12 @@ p {
   margin: 0;
 }
 
-html, body, .top-view, .question-view {
+html, body, main, .top-view, .question-view {
   height: 100%;
   margin: 0;
 }
 
-body {
+/* body {
   display: flex;
   flex-direction: column;
 } 
@@ -20,7 +20,7 @@ main {
 
   flex: 1;
 
-}
+} */
 
 main {
 
@@ -79,11 +79,6 @@ main {
   background-color: blue;
 }
 
-
-/* .scale-img {
-  width: 300px;
-  height: auto;
-} */
 
 .yellow-apple {
   width: 80px;
