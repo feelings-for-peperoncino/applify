@@ -30,6 +30,7 @@ main {
   background-size: cover; /* 画像を要素全体にフィットさせる */
   background-position: center; /* 画像を中央に配置する */
   background-repeat: no-repeat; /* 画像を繰り返さない */
+  background-color: #fff;
 }
 
 .top-view {
@@ -81,7 +82,7 @@ main {
 
 
 .yellow-apple {
-  width: 80px;
+  width: 70px;
 }
 
 .equal {
