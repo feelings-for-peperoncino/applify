@@ -73,8 +73,8 @@ main {
 }
 
 .question {
-  margin: 20px;
-  padding: 20px;
+  margin: 10px;
+  padding: 10px;
   border: 5px solid #3f6db5;
 }
 
@@ -93,7 +93,7 @@ main {
 }
 
 .question-view-footer {
-  padding: 20px 0;
+  padding: 10px 0;
   background-color: #3f6db5;
 }
 
