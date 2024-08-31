@@ -8,6 +8,10 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
   <link rel="stylesheet" href="css/style.css">
+  <!-- フォント -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -16,10 +20,7 @@
     <div id="top-view" class="top-view">
       <div class="top-view-header">
         <div>
-          <img src="img/applecaアセット 2@3x.png" alt="" width="200">
-        </div>
-        <div>
-          <img src="img/applecaアセット 3@3x.png" alt="" width="200">
+          <img src="img/top-msg1.png" alt="" width="200">
         </div>
       </div>
 
@@ -38,32 +39,33 @@
               <img src="img/level1.png" alt="" id="level1" class="level-btn">
             </div>
             <div class="col">
-              <img src="img/level2.png" alt="" class="level-btn">
+              <img src="img/level2.png" alt="" id="level2" class="level-btn">
             </div>
             <div class="col">
-              <img src="img/level3.png" alt="" class="level-btn">
+              <img src="img/level3.png" alt="" id="level3" class="level-btn">
             </div>
           </div>
         </div>
       </div>
 
       <div class="top-view-footer">
-        <img src="img/applelevelアセット 6@3x.png" alt="" width="200">
+        <img src="img/top-msg2.png" alt="" width="200">
       </div>
     </div>
 
     <div id="question-view" class="question-view d-none">
       <div class="container-fluid question-view-header">
-        <div class="row align-items-center">
+        <div class="row align-items-end">
           <div class="col">
             <a href=""><img src="img/title-logo.png" alt="" width="100"></a>
           </div>
           <div class="col">
-            <p class="question-view-header-level">LEVEL1</p>
+            <!-- 画像タグにIDを追加 -->
+            <img id="level-header-img" src="img/level1-header.png" alt="" width="100">
           </div>
         </div>
-
       </div>
+      
 
 
 
@@ -79,7 +81,7 @@
             <div style="position: relative; width: 280px; height: 140px; display: inline-block;">
               <img src="img/scale.png" style="width: 100%; height: 100%;" />
               <p id="resultText"
-                style="position: absolute; top: 60%; left: 50%; transform: translate(-50%, -50%); font-size: 30px; color: black;">
+                style="position: absolute; top: 65%; left: 50%; transform: translate(-50%, -50%); font-size: 30px; color: #3f6db5;">
                 5</p>
             </div>
           </div>
@@ -108,12 +110,15 @@
                 <p id="userAnswer"></p>
               </div>
             </div>
+            <div class="col-1 align-self-end" style="color: #3f6db5;">
+              kg
+            </div>
           </div>
 
         </div>
 
         <div class="container" style="padding: 10px 110px;">
-          <div class="row row-cols-3 g-1">
+          <div class="row row-cols-5 g-1">
             <img src="img/n1.png" alt="1" width="100" onclick="inputNumber(1)" class="col">
             <img src="img/n2.png" alt="2" width="100" onclick="inputNumber(2)" class="col">
             <img src="img/n3.png" alt="3" width="100" onclick="inputNumber(3)" class="col">
@@ -124,77 +129,23 @@
             <img src="img/n8.png" alt="8" width="100" onclick="inputNumber(8)" class="col">
             <img src="img/n9.png" alt="9" width="100" onclick="inputNumber(9)" class="col">
             <img src="img/n0.png" alt="0" width="100" onclick="inputNumber(0)" class="col">
-            <img src="img/nc.png" alt="C" width="100" onclick="clearAnswer()" class="col">
-            <img src="img/nok.png" alt="OK" width="100" onclick="checkAnswer()" class="col">
+
+
+          </div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <img src="img/nc.png" alt="C" width="200" onclick="clearAnswer()">
+            </div>
+            <div class="col">
+              <img src="img/nok.png" alt="OK" width="200" onclick="checkAnswer()">
+            </div>
           </div>
         </div>
       </div>
 
-      <script>
-        let correctAnswer = 0;
-        let secondNumber = 0;
-        let questionCount = 0;
 
-        function generateMultiplicationQuestion() {
-          // ランダムに3以下の数値を選択
-          let num1 = Math.floor(Math.random() * 3) + 1; // りんごの数 (x)
-          secondNumber = Math.floor(Math.random() * 3) + 1; // りんご1つの重さ (y)
-
-          // スケールに表示する合計の重さ (z)
-          let totalWeight = num1 * secondNumber;
-
-          // 合計の重さをスケールの上に表示
-          document.getElementById('resultText').innerText = totalWeight;
-
-          // りんごの数に応じてyellow appleを表示
-          let appleContainer = document.getElementById('appleContainer');
-          appleContainer.innerHTML = ''; // 以前のりんご画像をクリア
-          for (let i = 0; i < num1; i++) {
-            let img = document.createElement('img');
-            img.src = 'img/yellow-apple.png';
-            img.alt = 'yellow apple';
-            img.className = 'yellow-apple';
-            appleContainer.appendChild(img);
-          }
-
-          // 正解の重さを設定 (ユーザーが答えるべき値)
-          correctAnswer = secondNumber;
-
-          // ユーザーアンサーをクリア
-          document.getElementById('userAnswer').innerText = '';
-        }
-
-        function inputNumber(num) {
-          let currentAnswer = document.getElementById('userAnswer').innerText;
-          document.getElementById('userAnswer').innerText = currentAnswer + num;
-        }
-
-        function clearAnswer() {
-          document.getElementById('userAnswer').innerText = '';
-        }
-
-        function checkAnswer() {
-          let userAnswer = parseInt(document.getElementById('userAnswer').innerText);
-          if (userAnswer === correctAnswer) {
-            questionCount++;
-            if (questionCount < 3) {
-              alert('good');
-              clearAnswer();
-              generateMultiplicationQuestion();
-            } else {
-              alert('すべて正解しました！');
-              clearAnswer();
-              questionCount = 0;
-              generateMultiplicationQuestion(); // 最初の問題に戻る
-            }
-          } else {
-            alert('try again');
-          }
-        }
-
-        // 初期化
-        generateMultiplicationQuestion();
-      </script>
 
 
 
@@ -217,13 +168,7 @@
     crossorigin="anonymous"></script>
   <script src="js/script.js"></script>
 
-  <script>
-    // lebelボタンを押すと#question-viewが表示される
-    document.querySelector('#level1').addEventListener('click', () => {
-      document.querySelector('#top-view').classList.add('d-none');
-      document.querySelector('#question-view').classList.remove('d-none');
-    });
-  </script>
+  
 </body>
 
 </html>
