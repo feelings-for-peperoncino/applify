@@ -71,9 +71,14 @@
 
       <div class="question-view-content">
 
+        <div id="time" class="container time">
+          00:00
+        </div>
 
-
-        <div id="question" class="question fs-1 pt-3">
+        <div id="question" class="question fs-1">
+          <p id="question-count" class="question-count">
+            Question 1
+          </p>
           <div id="appleContainer">
             <!-- 最初の数に応じてyellow appleが表示される -->
           </div>
@@ -85,6 +90,10 @@
                 5</p>
             </div>
           </div>
+        </div>
+
+        <div>
+          <img src="img/question-txt.png" alt="" width="80%">
         </div>
 
         <div class="container" style="padding: 10px 100px;">
@@ -100,7 +109,7 @@
                 <p id="userAnswer" style="color: #3f6db5;"></p>
               </div>
             </div>
-            <div class="col-1 align-self-end" style="color: #3f6db5;">
+            <div class="col-1 align-self-end" style="color: #eb6556;">
               kg
             </div>
           </div>
@@ -129,6 +138,13 @@
             <div class="col">
               <img src="img/nok.png" alt="OK" width="150" onclick="checkAnswer()">
             </div>
+          </div>
+        </div>
+        <div class="container py-2">
+          <div class="row justify-content-center">
+            <a href="">
+            <img src="img/back-btn.png" alt="" class="col-4">
+          </a>
           </div>
         </div>
       </div>
