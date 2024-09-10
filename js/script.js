@@ -84,16 +84,28 @@ function generateMultiplicationQuestion(level) {
   let totalWeight = num1 * num2;
   document.getElementById('resultText').innerText = totalWeight;
 
-  // りんごの数に応じてyellow appleを表示
-  let appleContainer = document.getElementById('appleContainer');
-  appleContainer.innerHTML = ''; // 以前のりんご画像をクリア
-  for (let i = 0; i < num1; i++) {
-    let img = document.createElement('img');
-    img.src = 'img/yellow-apple.png';
-    img.alt = 'yellow apple';
-    img.className = 'yellow-apple';
-    appleContainer.appendChild(img);
-  }
+// りんごの数に応じてyellow appleを表示
+let appleContainer = document.getElementById('appleContainer');
+appleContainer.innerHTML = ''; // 以前のりんご画像をクリア
+
+for (let i = 0; i < num1; i++) {
+  // 新しい <div class="col"> 要素を作成
+  let colDiv = document.createElement('div');
+  colDiv.className = 'col';
+  
+  // 新しい <img> 要素を作成
+  let img = document.createElement('img');
+  img.src = 'img/yellow-apple.png';
+  img.alt = 'yellow apple';
+  img.style.width = '100%'; // width="100%" を設定
+
+  // <img> 要素を <div class="col"> に追加
+  colDiv.appendChild(img);
+
+  // <div class="col"> を appleContainer に追加
+  appleContainer.appendChild(colDiv);
+}
+
 
   // 正解の重さを設定 (ユーザーが答えるべき値)
   correctAnswer = num2;
@@ -134,4 +146,3 @@ function checkAnswer() {
 
 // 初期化
 generateMultiplicationQuestion(currentLevel);
-
