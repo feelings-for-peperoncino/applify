@@ -85,7 +85,8 @@ main {
 }
 
 .question-view-header {
-  padding: 10px 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
   background-color: #f3f0a5;
 }
 
